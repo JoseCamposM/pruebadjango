@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+
+{% block titulo %} Lista de Expedientes {% endblock %}
+
+
+
+{% block contenido %} 
+
+
+<br>
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button"> Agregar nuevo Expediente</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Expedientes</h4>
+
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                       
+                        <th scope="col">Num Ep</th>
+                        <th scope="col">Enajenante(s)</th>
+                        <th scope="col">Adquiriente(s)</th>
+                        <th scope="col">ISAI</th>
+                        <th scope="col">ISR</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+
+               
+
+
+                <tbody>
+
+                    {% for expediente in expedientes %}
+                    <tr class="">
+
+                        <td>{{expediente.NumEp}}</td>
+                        <td>{{expediente.Enajenante}}</td>
+                        <td>{{expediente.Adquiriente}}</td>
+                        <td>{{expediente.Isai}}</td>
+                        <td>{{expediente.Isr}}</td>
+                        <td> 
+                            <a name="" id="" class="btn btn-info" href="{% url 'editar' expediente.id %}" role="button">Editar</a> | 
+                            <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' expediente.id %}" role="button">Borrar</a>
+                            </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+    <div class="card-footer text-muted">
+    
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block titulo %} Agregar nuevo Expediente {% endblock %}
+
+
+
+{% block contenido %} 
+
+
+<div class="card">
+    <div class="card-header">
+      Editar expediente
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos el expediente</h4>
+
+        {% include 'expedientes/form.html' %}
+    </div>
+    <div class="card-footer text-muted">
+      
+    </div>
+</div>
+
+{% endblock %}
+
+
+
